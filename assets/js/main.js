@@ -90,18 +90,30 @@ themeButton.addEventListener('click', () => {
 })
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr = ScrollReveal({
-   origin: 'top',
-   distance: '60px',
-   duration: 2500,
-   delay: 400,
-   // reset: true, // Animations repeat
-})
+// Simple scroll reveal implementation (no external library needed)
+const scrollRevealElements = document.querySelectorAll('.home__perfil, .about__perfil, .home__content, .home__data, .about__data, .section__title, .services__card, .work__card, .testimonial__card, .contact__conatiner');
 
-sr.reveal('.home__perfil, .about__perfil')
-sr.reveal('.home__content', {origin: 'right'})
-sr.reveal('.home__data, .about__data', {origin: 'left'})
-sr.reveal('.section__title, .services__card, .work__card, .testimonial__card, .contact__conatiner', {interval: 100})
+const revealOnScroll = () => {
+   scrollRevealElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const elementVisible = 150;
+      
+      if (elementTop < window.innerHeight - elementVisible) {
+         element.style.opacity = '1';
+         element.style.transform = 'translateY(0)';
+      }
+   });
+};
+
+// Set initial state
+scrollRevealElements.forEach(element => {
+   element.style.opacity = '0';
+   element.style.transform = 'translateY(60px)';
+   element.style.transition = 'all 0.8s ease';
+});
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
 
 /*=============== SHOW SCROLL UP ===============*/ 
 const scrollUp = () => {
