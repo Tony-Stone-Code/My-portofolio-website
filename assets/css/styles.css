@@ -612,7 +612,7 @@ body.dark-theme {
 }
 
 /*=============== CONTACT ===============*/
-.contact__conatiner {
+.contact__container {
   row-gap: 4rem;
 }
 
@@ -1075,7 +1075,7 @@ body.dark-theme {
     margin-bottom: 1.5rem;
   }
 
-  .contact__conatiner {
+  .contact__container {
     grid-template-columns: repeat(2, max-content);
     justify-content: center;
     align-items: center;

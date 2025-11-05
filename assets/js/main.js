@@ -91,7 +91,7 @@ themeButton.addEventListener('click', () => {
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 // Simple scroll reveal implementation (no external library needed)
-const scrollRevealElements = document.querySelectorAll('.home__perfil, .about__perfil, .home__content, .home__data, .about__data, .section__title, .services__card, .work__card, .testimonial__card, .contact__conatiner');
+const scrollRevealElements = document.querySelectorAll('.home__perfil, .about__perfil, .home__content, .home__data, .about__data, .section__title, .services__card, .work__card, .testimonial__card, .contact__container');
 
 const revealOnScroll = () => {
    scrollRevealElements.forEach(element => {
